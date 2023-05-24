@@ -1,33 +1,32 @@
 # Computer Vision Projects
 
-This repository contains two computer vision projects: Face Detection and Hand Tracking. These projects leverage various computer vision techniques and libraries to accomplish their respective tasks. Below, you'll find an overview of each project.
+This repository contains two computer vision projects developed using OpenCV: Face Detection and Hand Tracking.
 
 ## Face Detection
 
-The Face Detection project focuses on detecting and locating human faces in images and video streams. It utilizes the power of deep learning algorithms and the OpenCV library to accurately identify faces within a given frame. The project includes pre-trained models and code to perform real-time face detection, making it applicable for a wide range of applications, including facial recognition, emotion detection, and augmented reality.
+The Face Detection project utilizes OpenCV and the Mediapipe library to detect faces in both videos and images. The Mediapipe Face Detection API is used to locate faces and draw bounding boxes around them. The detected faces are annotated with a confidence score.
 
-Features of the Face Detection project:
-- Real-time face detection in images and video streams
-- Face landmark detection to identify key facial features
-- Ability to draw bounding boxes around detected faces
-- Integration with OpenCV for image and video processing
+### Face Detection Basics
+
+The `face_detection_basics.py` script detects faces in a provided video file using the Mediapipe Face Detection API. Bounding boxes are drawn around the detected faces, and the confidence scores are displayed. The script also calculates and displays the frames per second (FPS).
+
+### Face Detection Module
+
+The `face_detection_module.py` file contains a reusable class called `FaceDetector` that encapsulates the functionality of face detection using Mediapipe. The class provides a `findFaces()` method that takes an image as input and returns the image with annotated bounding boxes around the detected faces.
 
 ## Hand Tracking
 
-The Hand Tracking project aims to track and recognize human hand gestures in real-time. It employs computer vision techniques, including image segmentation and tracking algorithms, to detect and track the movements of hands in video input. By accurately capturing hand gestures, this project enables the development of intuitive and interactive interfaces for applications such as sign language recognition, virtual reality interactions, and touchless control systems.
+The Hand Tracking project focuses on detecting hand gestures and counting the number of fingers using a webcam. It utilizes the Mediapipe Hand Tracking API to detect and track hand landmarks. Based on the positions of the landmarks, the number of extended fingers is determined.
 
-Features of the Hand Tracking project:
-- Real-time hand detection and tracking in video streams
-- Hand landmark estimation for precise tracking of hand movements
-- Gesture recognition to identify common hand poses and gestures
-- Integration with OpenCV and MediaPipe frameworks
+### Finger Counting
 
-## Getting Started
+The `finger_counting.py` script performs finger counting using hand tracking. It detects and tracks hand landmarks using the `HandTrackingModule`. The webcam feed is displayed with an overlay showing the number of extended fingers, along with corresponding images for each finger count.
 
+### Hand Tracking Module
 
-## Acknowledgements
+The `HandTrackingModule.py` file contains a reusable class called `handDetector` that encapsulates the functionality of hand detection and tracking using Mediapipe. The class provides methods to find hands in an image and obtain the positions of hand landmarks.
 
-The Face Detection and Hand Tracking projects were developed based on the knowledge and resources from various computer vision and machine learning communities. We acknowledge the contributions of the following projects and frameworks:
-- OpenCV: [https://opencv.org/](https://opencv.org/)
-- MediaPipe: [https://mediapipe.dev/](https://mediapipe.dev/)
-- Pre-trained models: [https://examplemodels.com/](https://examplemodels.com/)
+---
+
+Feel free to explore the individual project files for more details and to run the scripts in your local environment.
+
